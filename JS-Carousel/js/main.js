@@ -63,3 +63,9 @@ for(let i = 0; i < imageCollection.length; i++){
 }
 
 
+// classe active
+let actImage = 2;
+document.getElementsByClassName('image-container')[actImage].classList.add('active');
+document.getElementsByClassName('thumb')[actImage].classList.add('active')
+
+
