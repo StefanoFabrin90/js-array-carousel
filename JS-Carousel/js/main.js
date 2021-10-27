@@ -69,3 +69,41 @@ document.getElementsByClassName('image-container')[actImage].classList.add('acti
 document.getElementsByClassName('thumb')[actImage].classList.add('active')
 
 
+// scorrimento immagini in basso
+const next = document.querySelector('.next');
+
+next.addEventListener('click', function(){
+    if(actImage === imageCollection.length -1){
+        actImage = 0;
+    } else {
+        actImage++;
+    }
+
+    // reset
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.querySelector('.thumb.active').classList.remove('active');
+
+    // aggiunger active
+    document.getElementsByClassName('image-container')[actImage].classList.add('active');
+    document.getElementsByClassName('thumb')[actImage].classList.add('active')
+})
+
+// scorrimento immagini in alto
+const prev = document.querySelector('.prev');
+
+prev.addEventListener('click', function(){
+    // actImage--
+    if(actImage === 0){
+        actImage = imageCollection.length-1;
+    } else {
+        actImage--;
+    }
+
+    // reset
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.querySelector('.thumb.active').classList.remove('active');
+
+    // aggiunger active
+    document.getElementsByClassName('image-container')[actImage].classList.add('active');
+    document.getElementsByClassName('thumb')[actImage].classList.add('active')
+})
